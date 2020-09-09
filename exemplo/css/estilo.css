@@ -1,0 +1,35 @@
+#divMapa{
+    width: 900px;
+    height: 700px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}	
+.legenda {
+    padding: 6px 8px;
+    font: 22px/24px Arial, Helvetica, sans-serif;
+    background: white;
+    border-radius: 5px;
+
+    text-align: left;
+    line-height: 30px;
+}
+.legenda i {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 8px;
+}			
+.dc-chart g.row text {
+    fill: black;
+    font: 14px/14px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.dc-chart g.row {
+    height: 30px;
+}
+
+.dc-chart g.tick text {
+	fill: black;
+	font: 14px/14px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}

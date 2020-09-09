@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+
+  	<head>
+	  	<meta charset="utf-8">
+		
+		<title>Painel Covid-19 no Brasi - Minicurso 02 - ERCEMAPI 2020</title>
+       
+	    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+	    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	   	<script src="https://d3js.org/colorbrewer.v1.min.js"></script>
+	    <script src="js/crossfilter.js" charset="utf-8"></script>
+	    <script src="js/dc.js" charset="utf-8"></script>
+	    <script type="text/javascript" src="data/UF.js"></script>
+	    
+		<link rel="stylesheet" href="css/dc.css">
+		<link rel="stylesheet" href="css/dashboard.css">
+	    
+ 
+  	</head>
+
+  	<body style="background: #e3e3e3;">
+
+		<div id ="divGeral">
+			
+			<h3 id = "title"></h3>
+			
+			<div id="divControles">
+				<h2>					
+					Incidência
+					<label class="switch"> 
+						<input type="checkbox" id="trocaEscala" onchange="trocaEscala()">  
+						<span class="slider round"></span> 
+					</label>
+					Óbitos |
+					Taxas
+					<label class="switch"> 
+						<input type="checkbox" id="trocaEscala" onchange="trocaControleTxVa()">  
+						<span class="slider round"></span> 
+					</label> 
+					Valores Absolutos
+					
+				</h2>
+			</div>
+			
+			<div id="divDashBoard">
+				
+				<div style="margin-left: 1%;">
+
+					<div id="divCasosPorUF">
+						<h2 style="margin-left: 5%;" id="valoresAbsolutosTitle"></h2>
+					</div>
+
+					<div id="divCasosPorRG">
+						<h2 style="margin-left: 5%;" id = "valoresAbsolutosRGTitle">Dados por Região</h2>
+					</div>
+
+					<div id="divObitosAcumulados">
+						<h2 style="margin-left: 5%;">Casos acumulados (último mês)</h2>
+					</div>	
+					<div id="divNovosCasos">
+						<h2 style="margin-left: 5%;">Novos casos por dia (último mês)</h2>
+					</div>
+					<div id="divNovosObitos">
+						<h2 style="margin-left: 5%;">Novos óbitos por dia (último mês)</h2>
+					</div>
+				</div>	
+				<br>
+				<label>-</label>			
+			</div>
+
+			<div class="slidecontainer">				
+				
+				<h3>
+					<label id = "dataLabel">Data: 10/04/2020</label>
+					
+					<button id= "ant" onclick="diaAnt()"><</button>
+					<button id= "prox" onclick="proxDia()">></button>					
+					
+					<script type="text/javascript">
+						function proxDia(){
+							var min = +document.getElementById("dataRange").min,
+							max = +document.getElementById("dataRange").max,
+							val = +document.getElementById("dataRange").value;
+							if(val == max){
+								document.getElementById("dataRange").value = min;
+								alteraDia();
+							}else{
+								document.getElementById("dataRange").value++;
+								alteraDia();
+							}}
+						function diaAnt(){
+							var min = +document.getElementById("dataRange").min,
+							max = +document.getElementById("dataRange").max,
+							val = +document.getElementById("dataRange").value;
+							if(val == min){
+								document.getElementById("dataRange").value = max;
+								alteraDia();
+							}else{
+								document.getElementById("dataRange").value--;
+								alteraDia();
+							}
+						}
+					</script>
+				</h3>
+				<h3>
+					<input type="range" min="1" max="100" value="100" class="slider2" id="dataRange" onchange="alteraDia()">
+				</h3>
+
+			</div>
+
+			<p style="padding: 10px;">
+				*Fonte: <a href="https://covid.saude.gov.br/">Ministério da Saúde</a> e <a href="https://www.ibge.gov.br/apps/populacao/projecao/index.html?utm_source=portal&utm_medium=popclock&utm_campaign=novo_popclock">IBGE</a>
+			</p>
+
+		</div>
+		
+		<script type="text/javascript" src="js/dashboard.js"></script>
+		
+	   
+  	</body>
+</html>

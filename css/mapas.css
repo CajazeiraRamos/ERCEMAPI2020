@@ -1,0 +1,242 @@
+#divGeral{
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 15px;
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 5%;
+	/*height: 2900px;*/
+}
+#divGeral h1{
+	padding: 8px;
+	/*margin-left: 1%;*/
+}
+
+#divMapa{
+	width: 98%;
+	height: 1000px;
+	margin-left: 1%;
+	/*margin-top: 2%;*/
+	border-radius: 15px;}
+#divControles{
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 1%;
+	border-radius: 15px;
+	text-align:center;}
+#divControles h2{
+
+	padding: 12px;}
+
+#divControles button{
+	height: 30%;
+	width: 200px;
+    color: black;
+    padding: 10px;
+	margin-left: 45%;
+	margin-top:0.5%;
+	margin-bottom: 1%;
+    text-align: center;
+  	border-radius: 15px;
+  	font-size: 16px;}
+/*#ant{
+	padding: 15px;
+	margin-top: 1%;
+}
+#prox{
+	padding: 15px;
+	margin-top: 1%;
+}*/
+#divDashBoard{
+	/*background-color: #e3e3e3;*/
+	width: 98%;
+	height: 1000px;
+	margin-left: 1%;
+	margin-top: 1%;
+	border-radius: 15px;}
+
+.divDashBoardC{
+	margin-top: 1%;
+	
+	width: 48%;
+	height: 100%;
+	background-color: #e3e3e3;
+}
+
+.slidecontainer{
+	width: 50%;
+	margin-top: 1%;
+	margin-left: 25%;
+	text-align: center;}
+
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	margin-top: 1%;}
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;}
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #000000; /* #e34a33;*/
+	opacity: 0.5;
+	-webkit-transition: .4s;
+	transition: .4s;}
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 60%;
+	width: 30%;
+	left: 10px;
+	bottom: 8px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;}
+input:checked + .slider {
+
+	background-color: #000000;}
+input:focus + .slider {
+
+	box-shadow: 0 0 1px #2196F3;}
+input:checked + .slider:before {
+	-webkit-transform: translateX(20px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);}
+/* Rounded /*sliders */
+.slider.round {
+
+	border-radius: 34px;}
+.slider.round:before {
+
+	border-radius: 50%;}
+
+/*Slider rand*/
+.slider2 {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;}
+.slider2::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #e34a33;
+  cursor: pointer;}
+.slider2::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;}
+
+
+.info {
+	padding: 6px 8px;
+	font: 22px/24px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+.info h4 {
+	margin: 0 0 5px;
+	color: #777;
+}
+/*.barra i {
+	margin-top: 5px;
+	height: 20px;
+	float: left;
+	opacity: 1;
+}*/
+.legend {
+	text-align: left;
+	line-height: 30px;
+	color: #555;
+}
+
+.legend i {
+	width: 30px;
+	height: 30px;
+	float: left;
+	margin-right: 8px;
+	opacity: 0.7;
+}
+.Row{
+	background: white;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+.dc-chart g.row text {
+	fill: black;
+	font: 14px/14px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.dc-chart g.row {
+	height: 30px;
+}
+
+/*.dc-chart g.pie-slice{
+	opacity: 0;
+}*/
+
+.dc-chart g.dc-legend-item text{
+	fill: black;
+	font: 20px/22px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.barLabel{
+	fill: black;
+	font: 16px/22px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+#divDashBoard text{
+	fill: black;
+	font: 16px/28px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+/*#divCasosPorRG text {
+	fill: black;
+	font: 20px/22px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}*/
+
+
+#limparFiltros{
+	height: 50px;
+	width: 200px;
+    color: black;
+    padding: 10px;
+	margin-left: 45%;
+	margin-top:0.5%;
+    text-align: center;
+  	border-radius: 15px;
+  	font-size: 16px;}
+/*#graficoMapa{
+	width: 200px;
+}*/
+
+.Controle{
+	padding: 20px;
+	width:250px;
+	height: 200px;
+}
