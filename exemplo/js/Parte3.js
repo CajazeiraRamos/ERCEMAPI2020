@@ -32,19 +32,19 @@
             .colors(function(d){
                 return escalaDeCores(d);});                
     grafico2
-    		.width(900)
-    		.height(500)
-    		.elasticY(true)
+            .width(900)
+            .height(500)
+            .elasticY(true)
             .margins({left: 60, top: 30, right: 80, bottom: 60})
             .x(d3.time.scale().domain([minDate, maxDate]))
-    		.xUnits(d3.time.days)
-    		.centerBar(true)
-    		.brushOn(false)
-    		.renderHorizontalGridLines(true)
-          	.renderVerticalGridLines(true)
-    		.colors(['#e34a33'])
-    		.dimension(dim_Data)
-    		.group(Casos_Data);
+            .xUnits(d3.time.days)
+            .brushOn(false)
+            .centerBar(true)
+            .renderHorizontalGridLines(true)
+            .renderVerticalGridLines(true)
+            .colors(['#e34a33'])
+            .dimension(dim_Data)
+            .group(Casos_Data);
     // Exemplo de filtro com dimensao crossfilter
     dim_Data.filter(function(d){
             if(d<=dtgFormat.parse("10/05/2020"))
@@ -53,6 +53,7 @@
     // Formatacao de numeros e data no grafico 2:
     var formatDay = d3.time.format("%d"),
     formatMonth = d3.time.format("%m");
+    
     grafico2
         .title(function(d){
             var dia  = formatDay(d.key),

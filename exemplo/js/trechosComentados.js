@@ -1,19 +1,12 @@
 // Parte 1: Lendo Arquivo csv com d3 e criando dimensões e grupos Crossfilter
  
 d3.csv("data/minSaude.csv", function(data){
-    dtgFormat = d3.time.format("%d/%m/%Y");
+    dtgFormat = d3.time.format("%Y-%m-%d");
     // Para cada instância (Ou linha) do arquivo, armazenar as variáveis desejadas
 	data.forEach(function(d) {
 		d.regiao = d.regiao;
         d.uf = d.estado;
-        
-        var Y = d.data.substr(0,4),
-		M = d.data.substr(5,2),
-		D = d.data.substr(8,2),
-		strData = D+'/'+M+'/'+Y;
-		
-		d.data = dtgFormat.parse(strData);
-		// d.data = dtgFormat.parse(d.data);
+		d.data = dtgFormat.parse(d.data);
 		d.casosNovos = +d.casosNovos;
 		d.casosAcumulados = +d.casosAcumulados;
 		d.obitosNovos = +d.obitosNovos;
@@ -45,7 +38,7 @@ d3.csv("data/minSaude.csv", function(data){
     
     //Qual o total de casos de SP em 10/04/2020? 
 
-    var key = 'UF:SP, data:'+dtgFormat.parse('10/04/2020'),
+    var key = 'UF:SP, data:'+dtgFormat.parse('2020-04-10'),
     resposta = groupCasos_DataUF.all().filter(function(i){ return i.key == key })[0].value;
 
     console.log(resposta); 
@@ -82,7 +75,7 @@ d3.csv("data/minSaude.csv", function(data){
     ).addTo(Mapa);
 
     // Data de Referência p/ o Mapa: 10/05/2020 e Escala de Cores:
-    let date = dtgFormat.parse('10/05/2020');
+    let date = dtgFormat.parse('2020-05-10');
     
     let escalaDeCores = d3.scale.linear()
         .domain([0,1000,5000,10000,15000,25000,40000])
@@ -221,7 +214,7 @@ d3.csv("data/minSaude.csv", function(data){
 
     // Janela temporal: 
 
-    var maxDate = dtgFormat.parse("10/05/2020"),
+    var maxDate = dtgFormat.parse("2020-05-10"),
     minDate = d3.time.day.offset(maxDate, -20);
    
     // Construção do gráfico:    
@@ -246,7 +239,7 @@ d3.csv("data/minSaude.csv", function(data){
 
         // Filtrando gráfico 1 para dados até o dia 10/05/2020:
         dim_Data.filter(function(d){
-            if(d<=dtgFormat.parse("10/05/2020"))
+            if(d<=dtgFormat.parse("2020-05-10"))
             return d;
         });
 

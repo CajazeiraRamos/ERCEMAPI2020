@@ -231,7 +231,7 @@ function alteraDia(){
 
 	dimData.filter(function(d){
 		if(d<=dataAtual)
-		return d;
+			return d;
 	});
 	
 
